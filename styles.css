@@ -1,0 +1,1576 @@
+/* Modern Professional Presentation CSS for Sprightly Energy Pvt Ltd */
+
+:root {
+    --primary-color: #d38b27;
+    /* Warm golden-orange */
+    --secondary-color: #e05a1d;
+    /* Bright orange-red for pill/banners */
+    --dark-color: #1e1e1e;
+    /* Corporate deep charcoal */
+    --dark-alt: #2d2d2d;
+    --light-bg: #f8fafc;
+    --text-color: #334155;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --sidebar-width: 280px;
+    --transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+    --font-heading: 'Outfit', 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --shadow-premium: 0 10px 30px -10px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+/* Reset and Global Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    overflow: hidden;
+    /* Lock viewport for presentation mode */
+    height: 100vh;
+    display: flex;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* App Container Layout */
+.app-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: white;
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    z-index: 100;
+    transition: all 0.5s var(--transition-timing);
+    flex-shrink: 0;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.02);
+}
+
+.sidebar-brand {
+    padding: 30px 24px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-svg {
+    width: 50px;
+    height: 50px;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.06));
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--dark-color);
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+}
+
+.brand-sub {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+}
+
+.sidebar-nav {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 30px 16px;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.nav-item:hover {
+    background-color: #f1f5f9;
+}
+
+.nav-item.active {
+    background-color: rgba(211, 139, 39, 0.08);
+    border-left-color: var(--primary-color);
+}
+
+.nav-num {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    width: 20px;
+}
+
+.nav-item.active .nav-num {
+    color: var(--primary-color);
+}
+
+.nav-label {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.nav-item.active .nav-label {
+    color: var(--dark-color);
+    font-weight: 700;
+}
+
+.sidebar-footer {
+    padding: 20px 24px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* Presentation Wrapper */
+.presentation-wrapper {
+    flex-grow: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--light-bg);
+}
+
+/* Global Header inside Presentation Area */
+.global-header {
+    height: 70px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 90;
+    position: relative;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.brand-horizontal {
+    display: none;
+    /* Only show when sidebar is hidden/collapsed */
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo-small {
+    width: 35px;
+    height: 35px;
+}
+
+.header-brand-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--dark-color);
+    letter-spacing: 0.5px;
+}
+
+/* Progress Bar at bottom of header */
+.slide-progress-bar {
+    width: 100%;
+    height: 4px;
+    background-color: var(--border-color);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.progress-fill {
+    width: 10%;
+    height: 100%;
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+    transition: width 0.7s var(--transition-timing);
+}
+
+/* Slides Box Container */
+.slides-container {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Slide Section Card Structure */
+.slide-section {
+    position: absolute;
+    top: 40px;
+    bottom: 40px;
+    left: 40px;
+    right: 40px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: var(--shadow-premium);
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.96) translateY(20px);
+    transition: all 0.7s var(--transition-timing);
+    z-index: 5;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Active Slide Transitions */
+.slide-section.active {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1) translateY(0);
+    z-index: 10;
+}
+
+/* Next / Prev helper animations */
+.slide-section.slide-out-prev {
+    opacity: 0;
+    transform: scale(0.96) translateX(-100px);
+    z-index: 4;
+}
+
+.slide-section.slide-out-next {
+    opacity: 0;
+    transform: scale(0.96) translateX(100px);
+    z-index: 4;
+}
+
+.slide-section.slide-in-right {
+    animation: slideInRight 0.8s var(--transition-timing) forwards;
+}
+
+.slide-section.slide-in-left {
+    animation: slideInLeft 0.8s var(--transition-timing) forwards;
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: scale(0.96) translateX(150px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: scale(0.96) translateX(-150px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) translateX(0);
+    }
+}
+
+/* Slide Inner Layouts */
+.slide-layout {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.split-layout {
+    display: grid;
+    grid-template-columns: 42% 58%;
+}
+
+.full-layout {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 60px;
+}
+
+/* Slide Content Containers */
+.slide-visual {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--light-bg);
+    border-right: 1px solid var(--border-color);
+}
+
+.slide-content {
+    height: 100%;
+    padding: 50px 70px;
+    z-index: 2;
+    position: relative;
+    background-color: white;
+}
+
+.flex-center-y {
+    display: flex;
+    align-items: center;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* General Typography & Elements */
+.pre-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    letter-spacing: 2px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.main-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 3.25rem;
+    color: var(--dark-color);
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 2.5rem;
+    color: #1e1e1e;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.section-title .highlight {
+    color: var(--primary-color);
+}
+
+.body-text {
+    font-family: var(--font-body);
+    font-size: 0.925rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    margin-bottom: 25px;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+/* Dynamic Entrance Animations for text items within active slide */
+.slide-section.active .pre-title,
+.slide-section.active .main-title,
+.slide-section.active .section-title,
+.slide-section.active .body-text,
+.slide-section.active .badge-pill-banner,
+.slide-section.active .phone-contact-box,
+.slide-section.active .company-quote-box,
+.slide-section.active .vm-card,
+.slide-section.active .strength-item,
+.slide-section.active .styled-services-list li,
+.slide-section.active .client-logos-cropped-box,
+.slide-section.active .director-message-bubble,
+.slide-section.active .thank-you-title,
+.slide-section.active .thank-pill-banner,
+.slide-section.active .registry-details-table,
+.slide-section.active .contact-methods-grid a {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0;
+}
+
+.slide-section.active .pre-title {
+    animation-delay: 0.1s;
+}
+
+.slide-section.active .main-title,
+.slide-section.active .section-title {
+    animation-delay: 0.2s;
+}
+
+.slide-section.active .badge-pill-banner,
+.slide-section.active .body-text,
+.slide-section.active .thank-pill-banner {
+    animation-delay: 0.3s;
+}
+
+.slide-section.active .phone-contact-box,
+.slide-section.active .company-quote-box,
+.slide-section.active .registry-details-table {
+    animation-delay: 0.4s;
+}
+
+/* Stagger list animation helper */
+.slide-section.active .strength-item:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.slide-section.active .strength-item:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.slide-section.active .strength-item:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.slide-section.active .strength-item:nth-child(4) {
+    animation-delay: 0.5s;
+}
+
+.slide-section.active .strength-item:nth-child(5) {
+    animation-delay: 0.6s;
+}
+
+.slide-section.active .styled-services-list li:nth-child(n) {
+    animation-delay: calc(0.1s + (0.04s * var(--n, 1)));
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   SLIDE 1: HOME SLIDE & GRAPHICS
+   ========================================================================== */
+.home-graphic-crop-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+}
+
+.crop-home-graphic {
+    width: 100%;
+    height: 100%;
+    background-image: url('company-profile.png');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    transition: transform 12s ease-out;
+}
+
+/* Slow pan zoom on active home visual */
+.slide-section.active .crop-home-graphic {
+    transform: scale(1.04) translate(0.5%, 0.5%);
+}
+
+.crescent-overlay-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px dashed rgba(211, 139, 39, 0.4);
+    pointer-events: none;
+}
+
+.crescent-overlay-ring.ring-1 {
+    width: 320px;
+    height: 320px;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid rgba(211, 139, 39, 0.1);
+}
+
+.crescent-overlay-ring.ring-2 {
+    width: 380px;
+    height: 380px;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1.5px dashed var(--primary-color);
+    opacity: 0.3;
+    animation: spin 30s linear infinite;
+}
+
+.floating-circle {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+.circle-orange-1 {
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-color);
+    left: 45px;
+    top: 25px;
+}
+
+.circle-yellow-1 {
+    width: 60px;
+    height: 60px;
+    background-color: #f5b736;
+    right: 80px;
+    top: -20px;
+}
+
+.circle-orange-2 {
+    width: 50px;
+    height: 50px;
+    background-color: var(--secondary-color);
+    left: 170px;
+    bottom: -15px;
+}
+
+@keyframes spin {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+.badge-pill-banner {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--secondary-color), #f97316);
+    color: white;
+    padding: 10px 40px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.15rem;
+    box-shadow: 0 8px 20px rgba(224, 90, 29, 0.25);
+    margin-bottom: 40px;
+}
+
+.phone-contact-box {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-top: 15px;
+}
+
+.phone-icon-bg {
+    width: 42px;
+    height: 42px;
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 10px rgba(224, 90, 29, 0.2);
+}
+
+.phone-number {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e1e1e;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   SLIDE 2: ABOUT / OUR COMPANY
+   ========================================================================== */
+.about-graphic-crop-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+}
+
+.crop-about-graphic {
+    width: 100%;
+    height: 100%;
+    background-image: url('our-company.png');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    transition: transform 12s ease-out;
+}
+
+.slide-section.active .crop-about-graphic {
+    transform: scale(1.03) translate(0.5%, -0.5%);
+}
+
+.about-ring-outer {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border: 15px solid rgba(211, 139, 39, 0.1);
+    border-radius: 50%;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.about-ring-inner {
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 3px solid var(--primary-color);
+    border-radius: 50%;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0.25;
+}
+
+.company-quote-box {
+    margin-top: 30px;
+    border-left: 4px solid var(--primary-color);
+    padding: 12px 20px;
+    background-color: #fafaf9;
+    position: relative;
+    border-radius: 0 8px 8px 0;
+}
+
+.quote-symbol {
+    position: absolute;
+    top: -5px;
+    left: 8px;
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    line-height: 1;
+    color: rgba(211, 139, 39, 0.1);
+    font-weight: 800;
+}
+
+.quote-text {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--dark-color);
+    position: relative;
+    z-index: 2;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   SLIDE 3: VISION AND MISSION
+   ========================================================================== */
+.vision-mission-bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100px;
+    pointer-events: none;
+}
+
+.vmbg-diamond-shape {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    transform: rotate(45deg);
+    top: 15%;
+    left: -30px;
+    opacity: 0.85;
+}
+
+.vmbg-triangle-shape {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 40px solid var(--secondary-color);
+    top: 60%;
+    left: -2px;
+    opacity: 0.9;
+}
+
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 35px;
+    flex-grow: 1;
+}
+
+.vm-card {
+    background-color: #fafcfc;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 35px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    transition: all 0.4s ease;
+}
+
+.vm-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.04);
+}
+
+.vm-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.vm-icon-box {
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.35rem;
+    border-radius: 8px;
+    transform: rotate(45deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(211, 139, 39, 0.25);
+    flex-shrink: 0;
+}
+
+.vm-icon-box i {
+    transform: rotate(-45deg);
+    /* Counter rotate icon inside rotated box */
+}
+
+.vm-title-banner {
+    flex-grow: 1;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 24px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(211, 139, 39, 0.15);
+}
+
+.vm-title-banner h3 {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.vm-body p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #475569;
+    text-align: justify;
+}
+
+/* ==========================================================================
+   SLIDE 4: OUR STRENGTH
+   ========================================================================== */
+.strength-illustration-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+}
+
+.crop-strength-graphic {
+    width: 100%;
+    height: 100%;
+    background-image: url('our-strength.png');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    transition: transform 12s ease-out;
+}
+
+.slide-section.active .crop-strength-graphic {
+    transform: scale(1.03) translate(0.5%, 0.5%);
+}
+
+.strengths-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.strength-item {
+    display: flex;
+    gap: 20px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.strength-item:hover {
+    background-color: #fafcfc;
+    border-color: var(--border-color);
+}
+
+.strength-num {
+    width: 36px;
+    height: 36px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 3px;
+}
+
+.strength-detail h3 {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 4px;
+}
+
+.strength-detail p {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+
+/* ==========================================================================
+   SLIDE 5, 6, 7: SERVICES SLIDES (Electrical, Civil, Mechanical)
+   ========================================================================== */
+.services-graphic-crop-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+}
+
+.crop-electrical-graphic {
+    width: 100%;
+    height: 100%;
+    background-image: url('our-services.png');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+}
+
+.crop-civil-graphic {
+    width: 100%;
+    height: 100%;
+    background-image: url('our-services-2.png');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    opacity: 0.955;
+}
+
+.crop-mechanical-graphic {
+    width: 100%;
+    height: 100%;
+    background-image: url('our-services-3.png');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+}
+
+/* Watermarks overlays on visual panels */
+.services-graphic-backdrop-watermark,
+.services-civil-watermark,
+.services-mechanical-watermark {
+    position: absolute;
+    inset: 0;
+    background-size: 60%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    opacity: 0.04;
+    pointer-events: none;
+}
+
+.services-graphic-backdrop-watermark {
+    background-image: url('our-services.png');
+}
+
+.services-civil-watermark {
+    background-image: url('our-services-2.png');
+}
+
+.services-mechanical-watermark {
+    background-image: url('our-services-3.png');
+}
+
+.services-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.services-sector-title {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--dark-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* Scrollable Container for bullet points */
+.services-scroll-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 15px;
+    margin-bottom: 10px;
+}
+
+/* Custom Scrollbar for scrollable container */
+.services-scroll-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+.services-scroll-container::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 5px;
+}
+
+.services-scroll-container::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+}
+
+.services-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.styled-services-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.styled-services-list li {
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    line-height: 1.6;
+    color: #475569;
+    position: relative;
+    padding-left: 20px;
+}
+
+.styled-services-list li::before {
+    content: "•";
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.25rem;
+    position: absolute;
+    left: 4px;
+    top: -2px;
+}
+
+/* ==========================================================================
+   SLIDE 8: OUR CLIENTS
+   ========================================================================== */
+.clients-intro-text {
+    max-width: 800px;
+    margin: 0 auto 35px auto;
+    color: var(--text-muted);
+}
+
+.client-logos-cropped-box {
+    margin-top: 10px;
+    border: 1px solid var(--border-color);
+    background-color: white;
+    padding: 10px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+}
+
+.crop-clients-container {
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    background-color: #fafbfc;
+}
+
+.crop-clients-container img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: -46%;
+    /* Dynamically offset client logos relative to the full slide image width/height */
+    left: 0;
+    transform: scale(1.002);
+    /* Improve image rendering */
+    image-rendering: -webkit-optimize-contrast;
+}
+
+/* ==========================================================================
+   SLIDE 9: DIRECTOR MESSAGE
+   ========================================================================== */
+.msg-block-wrapper {
+    padding-right: 20px;
+}
+
+.director-message-bubble {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 30px;
+    padding: 40px 45px;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(211, 139, 39, 0.25);
+}
+
+.director-message-bubble::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    z-index: -1;
+}
+
+.quote-bubble-icon {
+    font-size: 2.5rem;
+    opacity: 0.15;
+    position: absolute;
+    top: 25px;
+    left: 30px;
+}
+
+.director-message-bubble .message-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.75;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+    text-align: justify;
+    font-weight: 500;
+}
+
+.message-author {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.author-dash {
+    font-weight: bold;
+    opacity: 0.7;
+}
+
+.author-name {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #1e1e1e;
+    letter-spacing: 0.5px;
+}
+
+.director-portrait-container {
+    width: 100%;
+    height: 100%;
+    background-color: #fafbfc;
+}
+
+.crop-director-photo {
+    width: 100%;
+    height: 100%;
+    background-image: url('director-message.png');
+    background-size: cover;
+    background-position: right center;
+    background-repeat: no-repeat;
+    transition: transform 12s ease-out;
+}
+
+.slide-section.active .crop-director-photo {
+    transform: scale(1.03);
+}
+
+/* ==========================================================================
+   SLIDE 10: THANK YOU & CONTACTS
+   ========================================================================== */
+.thank-graphic-crop-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+}
+
+.crop-thankyou-graphic {
+    width: 100%;
+    height: 100%;
+    background-image: url('thank-you.png');
+    background-size: cover;
+    background-position: left center;
+    background-repeat: no-repeat;
+    opacity: 0.95;
+    transition: transform 12s ease-out;
+}
+
+.slide-section.active .crop-thankyou-graphic {
+    transform: scale(1.03) translate(0.5%, 0.5%);
+}
+
+.thank-content-box {
+    padding-left: 20px;
+}
+
+.thank-you-title {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    font-size: 4rem;
+    color: var(--dark-color);
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.thank-pill-banner {
+    display: inline-block;
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 8px 30px;
+    border-radius: 50px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.05rem;
+    box-shadow: 0 4px 15px rgba(224, 90, 29, 0.2);
+    margin-bottom: 30px;
+}
+
+.registry-details-table {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 20px 0;
+    margin-bottom: 30px;
+    max-width: 440px;
+}
+
+.registry-row {
+    display: grid;
+    grid-template-columns: 80px 20px 1fr;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.registry-label {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.registry-divider {
+    color: var(--text-muted);
+}
+
+.registry-val {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.font-mono {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.95rem;
+    letter-spacing: 0.2px;
+}
+
+.contact-methods-grid {
+    display: flex;
+    gap: 20px;
+    max-width: 450px;
+}
+
+.contact-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    background-color: #fafcfc;
+    text-align: center;
+}
+
+.contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px rgba(211, 139, 39, 0.08);
+}
+
+.circle-icon {
+    width: 38px;
+    height: 38px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+}
+
+.square-icon {
+    width: 38px;
+    height: 38px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    /* Square/rect theme */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.95rem;
+}
+
+.contact-text {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    word-break: break-all;
+}
+
+/* ==========================================================================
+   PRESENTATION CONTROLS BAR (Bottom Footer)
+   ========================================================================== */
+.presentation-controls {
+    height: 60px;
+    border-top: 1px solid var(--border-color);
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    z-index: 90;
+    font-size: 0.9rem;
+    color: var(--text-color);
+}
+
+.control-btn {
+    width: 36px;
+    height: 36px;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.slide-indicator {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--dark-color);
+}
+
+#currentSlideNum {
+    color: var(--primary-color);
+}
+
+.keyboard-guideline {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.keyboard-guideline i {
+    color: var(--primary-color);
+    margin: 0 2px;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1100px) {
+    :root {
+        --sidebar-width: 240px;
+    }
+}
+
+@media (max-width: 991px) {
+    body {
+        overflow-y: auto;
+        /* Fallback for small viewports */
+    }
+
+    .app-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: 60px;
+        /* Small banner header */
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar-brand {
+        padding: 0;
+        border-bottom: none;
+    }
+
+    .sidebar-nav,
+    .sidebar-footer {
+        display: none;
+        /* Hide sidebar list on tablets and below */
+    }
+
+    .brand-horizontal {
+        display: flex;
+        /* Global horizontal header title is visual */
+    }
+
+    .presentation-wrapper {
+        margin-top: 60px;
+        /* Offset fixed header */
+        height: auto;
+        min-height: calc(100vh - 60px);
+    }
+
+    .global-header {
+        display: none;
+        /* Remove duplicate header */
+    }
+
+    .slides-container {
+        padding: 20px;
+        height: auto;
+        min-height: 500px;
+    }
+
+    .slide-section {
+        position: relative;
+        /* Normal stack/card layout instead of absolute overlay */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        /* Stack naturally */
+        min-height: 550px;
+        margin-bottom: 30px;
+        opacity: 0;
+        pointer-events: none;
+        display: none;
+        /* Only show active slide */
+        transform: none !important;
+        transition: none;
+    }
+
+    .slide-section.active {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .split-layout {
+        grid-template-columns: 1fr;
+        /* Single column stack */
+    }
+
+    .slide-visual {
+        height: 300px;
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .crop-home-graphic {
+        background-size: 150% 100%;
+        background-position: left center;
+    }
+
+    .crop-about-graphic {
+        background-size: 150% 100%;
+        background-position: left center;
+    }
+
+    .crop-electrical-graphic {
+        background-size: 170% 100%;
+        background-position: left center;
+    }
+
+    .crop-civil-graphic {
+        background-size: 170% 100%;
+        background-position: left center;
+    }
+
+    .crop-mechanical-graphic {
+        background-size: 170% 100%;
+        background-position: left center;
+    }
+
+    .crop-director-photo {
+        background-size: 140% 100%;
+        background-position: 75% center;
+    }
+
+    .crop-thankyou-graphic {
+        background-size: 150% 100%;
+        background-position: left center;
+    }
+
+    .slide-content {
+        padding: 30px 25px;
+    }
+
+    .full-layout {
+        padding: 30px 25px;
+    }
+
+    .main-title {
+        font-size: 2.25rem;
+    }
+
+    .section-title {
+        font-size: 1.85rem;
+    }
+
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .crop-clients-container {
+        height: 220px;
+    }
+
+    .crop-clients-container img {
+        top: -46%;
+    }
+
+    .director-message-bubble::after {
+        right: 50%;
+        top: auto;
+        bottom: -15px;
+        transform: translateX(50%) rotate(45deg);
+    }
+
+    .contact-methods-grid {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .presentation-controls {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+        background-color: white;
+    }
+
+    .presentation-wrapper {
+        padding-bottom: 60px;
+        /* Offset bottom controls */
+    }
+
+    .keyboard-guideline {
+        display: none;
+        /* No arrows warning on mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 1.75rem;
+    }
+
+    .badge-pill-banner {
+        padding: 8px 24px;
+        font-size: 0.95rem;
+    }
+
+    .crop-clients-container {
+        height: 140px;
+    }
+}

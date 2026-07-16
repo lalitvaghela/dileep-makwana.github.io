@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprightly Energy Pvt Ltd - Company Profile</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Floating Navigation Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="logo-container">
+                    <svg viewBox="0 0 100 100" class="brand-logo-svg">
+                        <!-- BG Monogram E -->
+                        <path d="M25 25 H85 V40 H45 V50 H80 V65 H45 V75 H85 V90 H25 Z" fill="#1e1e1e" />
+                        <!-- BG Monogram S -->
+                        <path d="M20 20 H90 V32 H50 C38 32 38 45 50 45 H75 C88 45 92 58 92 68 C92 78 80 92 50 92 H15 V80 H50 C65 80 65 68 50 68 H35 C20 68 12 55 12 45 C12 35 20 20 50 20" fill="#2d2d2d" opacity="0.9" />
+                        <!-- Lightning Bolt crossing dynamically -->
+                        <path d="M55 5 L30 50 H52 L28 95 L72 42 H49 L65 5 Z" fill="#e05a1d" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" />
+                    </svg>
+                    <div class="brand-text">
+                        <span class="brand-name">SPRIGHTLY</span>
+                        <span class="brand-sub">ENERGY</span>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="nav-item active" data-slide="0">
+                        <span class="nav-num">01</span>
+                        <span class="nav-label">Profile Home</span>
+                    </li>
+                    <li class="nav-item" data-slide="1">
+                        <span class="nav-num">02</span>
+                        <span class="nav-label">Our Company</span>
+                    </li>
+                    <li class="nav-item" data-slide="2">
+                        <span class="nav-num">03</span>
+                        <span class="nav-label">Vision & Mission</span>
+                    </li>
+                    <li class="nav-item" data-slide="3">
+                        <span class="nav-num">04</span>
+                        <span class="nav-label">Our Strengths</span>
+                    </li>
+                    <li class="nav-item" data-slide="4">
+                        <span class="nav-num">05</span>
+                        <span class="nav-label">Electrical Sector</span>
+                    </li>
+                    <li class="nav-item" data-slide="5">
+                        <span class="nav-num">06</span>
+                        <span class="nav-label">Civil Sector</span>
+                    </li>
+                    <li class="nav-item" data-slide="6">
+                        <span class="nav-num">07</span>
+                        <span class="nav-label">Mechanical Sector</span>
+                    </li>
+                    <li class="nav-item" data-slide="7">
+                        <span class="nav-num">08</span>
+                        <span class="nav-label">Esteemed Clients</span>
+                    </li>
+                    <li class="nav-item" data-slide="8">
+                        <span class="nav-num">09</span>
+                        <span class="nav-label">Director's Message</span>
+                    </li>
+                    <li class="nav-item" data-slide="9">
+                        <span class="nav-num">10</span>
+                        <span class="nav-label">Contact & Info</span>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <p>&copy; 2026 Sprightly Energy</p>
+            </div>
+        </aside>
+
+        <!-- Main Slide Presentation Area -->
+        <main class="presentation-wrapper">
+            
+            <!-- Global Top Header with Company Logo -->
+            <header class="global-header">
+                <div class="header-logo">
+                    <div class="brand-horizontal">
+                        <svg viewBox="0 0 100 100" class="brand-logo-small">
+                            <path d="M25 25 H85 V40 H45 V50 H80 V65 H45 V75 H85 V90 H25 Z" fill="#1e1e1e" />
+                            <path d="M20 20 H90 V32 H50 C38 32 38 45 50 45 H75 C88 45 92 58 92 68 C92 78 80 92 50 92 H15 V80 H50 C65 80 65 68 50 68 H35 C20 68 12 55 12 45 C12 35 20 20 50 20" fill="#2d2d2d" opacity="0.9" />
+                            <path d="M55 5 L30 50 H52 L28 95 L72 42 H49 L65 5 Z" fill="#e05a1d" stroke="#ffffff" stroke-width="3" stroke-linejoin="round" />
+                        </svg>
+                        <span class="header-brand-title">SPRIGHTLY ENERGY PVT LTD</span>
+                    </div>
+                </div>
+                <div class="slide-progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </header>
+
+            <!-- Slides Container -->
+            <div class="slides-container" id="slidesContainer">
+                
+                <!-- Slide 1: Company Profile (Home) -->
+                <section class="slide-section active" data-index="0">
+                    <div class="slide-shadow-bg"></div>
+                    <div class="slide-layout split-layout">
+                        <!-- Left Side: Circular Graphic Crop -->
+                        <div class="slide-visual left-visual">
+                            <div class="home-graphic-crop-container">
+                                <div class="crop-home-graphic"></div>
+                                <div class="crescent-overlay-ring ring-1"></div>
+                                <div class="crescent-overlay-ring ring-2"></div>
+                                <div class="floating-circle circle-orange-1"></div>
+                                <div class="floating-circle circle-yellow-1"></div>
+                                <div class="floating-circle circle-orange-2"></div>
+                            </div>
+                        </div>
+                        <!-- Right Side: Content -->
+                        <div class="slide-content right-content flex-center-y">
+                            <div class="text-block">
+                                <span class="pre-title">SPRIGHTLY ENERGY PVT LTD</span>
+                                <h1 class="main-title">Company's Profile</h1>
+                                <div class="badge-pill-banner">
+                                    <span>Presentation - 2024</span>
+                                </div>
+                                <div class="phone-contact-box animate-pulse">
+                                    <div class="phone-icon-bg">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <span class="phone-number">+91 9909010111</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 2: Our Company -->
+                <section class="slide-section" data-index="1">
+                    <div class="slide-shadow-bg"></div>
+                    <div class="slide-layout split-layout">
+                        <!-- Left Side: Utility Towers image crop -->
+                        <div class="slide-visual left-visual">
+                            <div class="about-graphic-crop-container">
+                                <div class="crop-about-graphic"></div>
+                                <div class="about-ring-outer"></div>
+                                <div class="about-ring-inner"></div>
+                            </div>
+                        </div>
+                        <!-- Right Side: Content -->
+                        <div class="slide-content right-content flex-center-y">
+                            <div class="text-block pad-right-md">
+                                <h2 class="section-title"><span class="highlight">Our</span> Company</h2>
+                                <p class="body-text text-justify">
+                                    At Sprightly Energy Pvt. Ltd., we specialize in providing top-tier substation maintenance and support services, ensuring uninterrupted and efficient power distribution for industries, utilities, and renewable energy sectors. Our expert team is dedicated to maintaining the reliability and safety of critical electrical infrastructure through innovative solutions, advanced diagnostic tools, and a proactive approach. With a focus on quality and operational excellence, we help businesses and communities thrive by keeping the backbone of power transmission strong and resilient.
+                                </p>
+                                <div class="company-quote-box">
+                                    <span class="quote-symbol">"</span>
+                                    <p class="quote-text">Leading service provider in Electrical - civil - mechanical Engineering fields.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 3: Vision And Mission -->
+                <section class="slide-section" data-index="2">
+                    <div class="slide-shadow-bg"></div>
+                    <div class="slide-layout full-layout">
+                        <div class="vision-mission-bg-shapes">
+                            <div class="vmbg-diamond-shape"></div>
+                            <div class="vmbg-triangle-shape"></div>
+                        </div>
+                        <h2 class="section-title text-center"><span class="highlight">Vision</span> And <span class="highlight">Mission</span></h2>
+                        
+                        <div class="vision-mission-grid">
+                            <!-- Vision Card -->
+                            <div class="vm-card">
+                                <div class="vm-header">
+                                    <div class="vm-icon-box">
+                                        <i class="fa-regular fa-lightbulb"></i>
+                                    </div>
+                                    <div class="vm-title-banner">
+                                        <h3>Our Vision</h3>
+                                    </div>
+                                </div>
+                                <div class="vm-body">
+                                    <p>To be a trusted leader in substation maintenance, driving innovation and excellence in power infrastructure support. We envision a future where reliable power distribution enables sustainable growth and progress. At Sprightly Energy, we are committed to strengthening the foundation of modern energy systems.</p>
+                                </div>
+                            </div>
+
+                            <!-- Mission Card -->
+                            <div class="vm-card">
+                                <div class="vm-header">
+                                    <div class="vm-icon-box">
+                                        <i class="fa-solid fa-bullseye"></i>
+                                    </div>
+                                    <div class="vm-title-banner">
+                                        <h3>Our Mission</h3>
+                                    </div>
+                                </div>
+                                <div class="vm-body">
+                                    <p>To deliver exceptional substation maintenance and support services that ensure safe, efficient, and uninterrupted power distribution. We strive to minimize downtime, optimize system performance, and empower industries and communities with reliable energy solutions.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 4: Our Strength -->
+                <section class="slide-section" data-index="3">
+                    <div class="slide-shadow-bg"></div>
+                    <div class="slide-layout split-layout">
+                        <!-- Left Side: Radial Bulb Graphic -->
+                        <div class="slide-visual left-visual flex-center">
+                            <div class="strength-illustration-container" style="width: 100%; height: 100%;">
+                                <div class="crop-strength-graphic"></div>
+                            </div>
+                        </div>
+                        <!-- Right Side: Content -->
+                        <div class="slide-content right-content flex-center-y">
+                            <div class="text-block">
+                                <h2 class="section-title">Our <span class="highlight">Strength</span></h2>
+                                <div class="strengths-list">
+                                    <div class="strength-item" data-index="1">
+                                        <div class="strength-num">01</div>
+                                        <div class="strength-detail">
+                                            <h3>Expert Team</h3>
+                                            <p>A highly skilled and experienced team specializing in substation maintenance and power infrastructure support.</p>
+                                        </div>
+                                    </div>
+                                    <div class="strength-item" data-index="2">
+                                        <div class="strength-num">02</div>
+                                        <div class="strength-detail">
+                                            <h3>Reliability</h3>
+                                            <p>Proven track record of delivering consistent, high-quality services with minimal downtime.</p>
+                                        </div>
+                                    </div>
+                                    <div class="strength-item" data-index="3">
+                                        <div class="strength-num">03</div>
+                                        <div class="strength-detail">
+                                            <h3>Safety First</h3>
+                                            <p>Rigorous safety protocols and compliance with industry standards to ensure secure operations.</p>
+                                        </div>
+                                    </div>
+                                    <div class="strength-item" data-index="4">
+                                        <div class="strength-num">04</div>
+                                        <div class="strength-detail">
+                                            <h3>Innovative Solutions</h3>
+                                            <p>Utilization of advanced diagnostic tools and cutting-edge technology for optimal results.</p>
+                                        </div>
+                                    </div>
+                                    <div class="strength-item" data-index="5">
+                                        <div class="strength-num">05</div>
+                                        <div class="strength-detail">
+                                            <h3>Customer-Centric Approach</h3>
+                                            <p>Tailored services to meet the unique needs and challenges of each client.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 5: Our Services - Electrical Sector -->
+                <section class="slide-section" data-index="4">
+                    <div class="slide-shadow-bg"></div>
+                    <div class="slide-layout split-layout">
+                        <!-- Left Side: Lineman climbs pole photo crop -->
+                        <div class="slide-visual left-visual">
+                            <div class="services-graphic-crop-container">
+                                <div class="crop-electrical-graphic"></div>
+                                <div class="services-graphic-backdrop-watermark"></div>
+                            </div>
+                        </div>
+                        <!-- Right Side: Content -->
+                        <div class="slide-content right-content flex-center-y">
+                            <div class="text-block services-list-wrapper">
+                                <h2 class="section-title"><span class="highlight">Our</span> services</h2>
+                                <h3 class="services-sector-title">ELECTRICAL SECTOR</h3>
+                                <div class="services-scroll-container">
+                                    <ul class="styled-services-list">
+                                        <li>O & M of Sub-Station and Switch Yard up to 765KV.</li>
+                                        <li>O & M of EHV Transmission Lines up to 220KV.</li>
+                                        <li>Erection of Sub-Station and Switch Yard up to 765KV.</li>
+                                        <li>Testing of Switch Yard & Sub-Station up to 765KV.</li>
+                                        <li>Tower Erection of EHV Transmission Lines up to 765KV.</li>
+                                        <li>Stringing Work of EHV Transmission Lines up to 765KV.</li>
+                                        <li>Cable Lying / Supply / Fault Finding.</li>
+                                        <li>Wind & Solar Project.</li>
+                                        <li>Maintenance of Distribution Systems.</li>
+                                        <li>Commercial Installations.</li>
+                                        <li>SITC of Street Light.</li>
+                                        <li>Emergency Call Out Service.</li>
+                                        <li>Fire Protection Systems.</li>
+                                        <li>General Electrical Services.</li>
+                                        <li>Trusted supplier of Electrical Engineers, as well as both skilled and semi skilled labourer.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 6: Our Services - Civil Sector -->
+                <section class="slide-section" data-index="5">
+                    <div class="slide-shadow-bg"></div>
+                    <div class="slide-layout split-layout">
+                        <!-- Left Side: Hologram projection photo crop -->
+                        <div class="slide-visual left-visual">
+                            <div class="services-graphic-crop-container">
+                                <div class="crop-civil-graphic"></div>
+                                <!-- Background Watermark -->
+                                <div class="services-civil-watermark"></div>
+                            </div>
+                        </div>
+                        <!-- Right Side: Content -->
+                        <div class="slide-content right-content flex-center-y">
+                            <div class="text-block services-list-wrapper">
+                                <h2 class="section-title"><span class="highlight">Our</span> services</h2>
+                                <h3 class="services-sector-title">CIVIL SECTOR</h3>
+                                <div class="services-scroll-container">
+                                    <ul class="styled-services-list">
+                                        <li>EHV Transmission Lines.</li>
+                                        <li>Foundation up to 765KV.</li>
+                                        <li>Wind WTG Foundation.</li>
+                                        <li>Equipment Foundation.</li>
+                                        <li>ICR / MCR & Control Room.</li>
+                                        <li>Building Construction.</li>
+                                        <li>Bulk Earthworks.</li>
+                                        <li>Drainage/Sewerage System.</li>
+                                        <li>General Civil Service.</li>
+                                        <li>Supplier of skilled labourer.</li>
+                                        <li>Supplier of semi skilled labourer.</li>
+                                        <li>All type of civil labour services.</li>
+                                        <li>Supplier of all type of civil materials.</li>
+                                        <li>Trusted supplier of civil engineers.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 7: Our Services - Mechanical Sector -->
+                <section class="slide-section" data-index="6">
+                    <div class="slide-shadow-bg"></div>
+                    <div class="slide-layout split-layout">
+                        <!-- Left Side: Factory floor graphic crop -->
+                        <div class="slide-visual left-visual">
+                            <div class="services-graphic-crop-container">
+                                <div class="crop-mechanical-graphic"></div>
+                                <div class="services-mechanical-watermark"></div>
+                            </div>
+                        </div>
+                        <!-- Right Side: Content -->
+                        <div class="slide-content right-content flex-center-y">
+                            <div class="text-block services-list-wrapper">
+                                <h2 class="section-title"><span class="highlight">Our</span> services</h2>
+                                <h3 class="services-sector-title">MECHANICAL SECTOR</h3>
+                                <div class="services-scroll-container">
+                                    <ul class="styled-services-list">
+                                        <li>Industrial Maintenance.</li>
+                                        <li>Shutdown Maintenance.</li>
+                                        <li>Valve Maintenance.</li>
+                                        <li>Scaffolding.</li>
+                                        <li>Fabrication.</li>
+                                        <li>Mechanical Piping and Pumps.</li>
+                                        <li>General Mechanical Service.</li>
+                                        <li>Supplier of skilled labourer.</li>
+                                        <li>Supplier of semi skilled labourer.</li>
+                                        <li>All type of mechanical equipment services.</li>
+                                        <li>All type of mechanical maintenance services.</li>
+                                        <li>Installation and Upgrades.</li>
+                                        <li>Equipment Overhaul and Refurbishment.</li>
+                                        <li>Maintenance and Repair of Mechanical Components.</li>
+                                        <li>Trusted supplier of mechanical engineers.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 8: Our Esteemed Clients -->
+                <section class="slide-section" data-index="7">
+                    <div class="slide-shadow-bg"></div>
+                    <div class="slide-layout full-layout flex-center-y">
+                        <div class="text-block text-center pad-x-lg">
+                            <h2 class="section-title">Our Esteemed <span class="highlight">Clients</span></h2>
+                            <p class="body-text clients-intro-text">
+                                We are proud to serve a diverse clientele, including leading industries, utility providers, and renewable energy companies, who trust us for their critical substation maintenance needs. Their continued confidence in our expertise reflects our commitment to quality, reliability, and excellence.
+                            </p>
+                            
+                            <!-- Cropped Logo Grid Container -->
+                            <div class="client-logos-cropped-box">
+                                <div class="crop-clients-container">
+                                    <img src="our-estimated-clients.png" alt="Client Logos Grid">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 9: Director's Message -->
+                <section class="slide-section" data-index="8">
+                    <div class="slide-shadow-bg"></div>
+                    <div class="slide-layout split-layout">
+                        <!-- Left Side: Message Bubble -->
+                        <div class="slide-content left-content flex-center-y">
+                            <div class="text-block msg-block-wrapper">
+                                <h2 class="section-title">Director's <span class="highlight">Message</span></h2>
+                                <div class="director-message-bubble">
+                                    <i class="fa-solid fa-quote-left quote-bubble-icon"></i>
+                                    <p class="message-text">
+                                        At Sprightly Energy, our mission is to support the backbone of modern infrastructure—substations—through unwavering commitment to quality and innovation. We understand the critical role substations play in powering industries and communities, and we take pride in being a trusted partner for reliable energy solutions.
+                                    </p>
+                                    <div class="message-author">
+                                        <span class="author-dash">—</span>
+                                        <span class="author-name">Mr. Prerit Joshi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Right Side: Director Portrait image crop -->
+                        <div class="slide-visual right-visual">
+                            <div class="director-portrait-container">
+                                <div class="crop-director-photo"></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Slide 10: Thank You (Contact / Registry Details) -->
+                <section class="slide-section" data-index="9">
+                    <div class="slide-shadow-bg"></div>
+                    <div class="slide-layout split-layout">
+                        <!-- Left Side: Handshake over world map crop -->
+                        <div class="slide-visual left-visual">
+                            <div class="thank-graphic-crop-container">
+                                <div class="crop-thankyou-graphic"></div>
+                                <!-- Background Watermark -->
+                                <div class="handshake-watermark"></div>
+                            </div>
+                        </div>
+                        <!-- Right Side: Content -->
+                        <div class="slide-content right-content flex-center-y">
+                            <div class="text-block thank-content-box">
+                                <h1 class="thank-you-title">Thank You</h1>
+                                <div class="thank-pill-banner">
+                                    <span>For Your Attention</span>
+                                </div>
+                                
+                                <div class="registry-details-table">
+                                    <div class="registry-row">
+                                        <span class="registry-label">GSTIN</span>
+                                        <span class="registry-divider">:-</span>
+                                        <span class="registry-val font-mono">24ABFCS7730J1Z5</span>
+                                    </div>
+                                    <div class="registry-row">
+                                        <span class="registry-label">PAN NO</span>
+                                        <span class="registry-divider">:-</span>
+                                        <span class="registry-val font-mono">ABFCS7730J</span>
+                                    </div>
+                                    <div class="registry-row">
+                                        <span class="registry-label">TAN NO</span>
+                                        <span class="registry-divider">:-</span>
+                                        <span class="registry-val font-mono">RKTS17398D</span>
+                                    </div>
+                                    <div class="registry-row">
+                                        <span class="registry-label">ESIC</span>
+                                        <span class="registry-divider">:-</span>
+                                        <span class="registry-val font-mono">3700122786000999</span>
+                                    </div>
+                                    <div class="registry-row">
+                                        <span class="registry-label">PF</span>
+                                        <span class="registry-divider">:-</span>
+                                        <span class="registry-val font-mono">GJRAJ2337985000</span>
+                                    </div>
+                                </div>
+
+                                <div class="contact-methods-grid">
+                                    <a href="tel:+919909010111" class="contact-card">
+                                        <div class="contact-icon circle-icon">
+                                            <i class="fa-solid fa-phone"></i>
+                                        </div>
+                                        <span class="contact-text">+91 9909010111</span>
+                                    </a>
+                                    <a href="mailto:sprightlyenergy@gmail.com" class="contact-card">
+                                        <div class="contact-icon square-icon">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </div>
+                                        <span class="contact-text">sprightlyenergy@gmail.com</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+
+            <!-- Controller Arrows & Keyboard Tips -->
+            <div class="presentation-controls">
+                <button class="control-btn prev-btn" id="prevBtn" title="Previous Slide (Left Arrow)">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <div class="slide-indicator">
+                    <span id="currentSlideNum">1</span> / <span id="totalSlideNum">10</span>
+                </div>
+                <button class="control-btn next-btn" id="nextBtn" title="Next Slide (Right Arrow/Space)">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+                <div class="keyboard-guideline">
+                    <span>Use <i class="fa-solid fa-left-right"></i> arrow keys or scroll to navigate</span>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Main JavaScript Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
